@@ -1,6 +1,5 @@
 from rest_framework import serializers
 from rest_framework.validators import UniqueValidator
-from django.shortcuts import get_object_or_404
 
 from notes.models import User, Note
 from notes_app.utils import decrypt_note, encrypt_note
@@ -35,7 +34,7 @@ class NoteSerializer(serializers.ModelSerializer):
 
     class Meta:
         model = Note
-        fields = "__all__"
+        exclude = ("id", )
 
     def get_note(self, note_object):
         return decrypt_note(note_object.note)

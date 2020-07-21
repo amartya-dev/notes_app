@@ -51,7 +51,7 @@ class NoteListView(generics.ListAPIView):
 
 class AuthenticateView(APIView):
 
-    def get(self, request):
+    def post(self, request):
         serialized_user = UserAuthenticateSerializer(data=request.data)
         if serialized_user.is_valid(raise_exception=ValueError):
             user = authenticate(
