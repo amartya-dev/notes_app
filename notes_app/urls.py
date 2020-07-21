@@ -8,11 +8,11 @@ from drf_yasg.views import get_schema_view
 
 schema_view = get_schema_view(
    openapi.Info(
-      title="Blog API",
+      title="Notes API",
       default_version='v1',
-      description="APIs for a blog application",
+      description="APIs for a notes application",
       terms_of_service="https://www.google.com/policies/terms/",
-      contact=openapi.Contact(email="admin@ohuru.tech"),
+      contact=openapi.Contact(email="amarkaushik1999@gmail.com"),
       license=openapi.License(name="BSD License"),
    ),
    public=True,
