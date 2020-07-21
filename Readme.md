@@ -107,3 +107,6 @@ DATABASES = {
 - Run: `pip install -r requirements.txt`
 - Run: `python manage.py migrate`
 - Create super user: `python manage.py createsuperuser`
+
+# ToDo
+- [ ] Correct the documentation by customizing for each view
