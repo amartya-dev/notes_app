@@ -1,6 +1,12 @@
 # Description
 The present application is a simple Django Rest Framework Backend
-for a notes application where there are the following functionalities
+for a notes application where there are the following functionalities.
+<br>
+To check the data stored in the database:
+<br> After you create the superuser and have run all migrations,
+you can check all the values stores by visiting 
+http://localhost:8000/admin and logging in by the username and password
+given during superuser creation.
 
 # Functionalities
 - Add User (signup): <br> Make a `POST` request to 
@@ -80,3 +86,24 @@ Response (on failure):
   "status": "access denied"
 }
 ```
+
+# Steps to run
+- Clone the repository
+- Make the MYSQL database according to details in the `settings.py`
+file under the following:
+```python
+# Connect to the Mysql DB
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.mysql',
+        'NAME': 'notes',
+        'USER': 'notes_user',
+        'PASSWORD': 'aahtheo@123',
+        'HOST': 'localhost',
+        'PORT': '3306',
+    }
+}
+```
+- Run: `pip install -r requirements.txt`
+- Run: `python manage.py migrate`
+- Create super user: `python manage.py createsuperuser`
