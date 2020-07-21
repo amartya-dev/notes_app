@@ -24,6 +24,11 @@ class UserSerializer(serializers.ModelSerializer):
         fields = ("username", "password")
 
 
+class UserAuthenticateSerializer(serializers.Serializer):
+    username = serializers.CharField()
+    password = serializers.CharField()
+
+
 class NoteSerializer(serializers.ModelSerializer):
     user = serializers.ReadOnlyField(source='user.username')
     note = serializers.SerializerMethodField()
@@ -40,7 +45,6 @@ class NoteCreateSerializer(serializers.ModelSerializer):
     note = serializers.CharField()
 
     def create(self, validated_data):
-        print(validated_data["note"])
         encrypted_note = encrypt_note(validated_data["note"])
         note_object = Note.objects.create(
             note=encrypted_note,
