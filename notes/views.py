@@ -1,6 +1,7 @@
 from rest_framework import generics
 from rest_framework.permissions import IsAuthenticated
 from django.contrib.auth.models import User
+from django.shortcuts import get_object_or_404
 
 from notes.serializers import UserSerializer, NoteCreateSerializer, NoteSerializer
 from notes.models import Note

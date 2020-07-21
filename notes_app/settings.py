@@ -1,6 +1,7 @@
 import os
 
-from notes.utils import get_generated_key
+with open('secret.key', 'rb') as key_file:
+    CRYPTO_KEY = key_file.read()
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -116,5 +117,3 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.0/howto/static-files/
 
 STATIC_URL = '/static/'
-
-CRYPTO_KEY = get_generated_key()
